@@ -16,7 +16,7 @@ The output is a raw stream of 4-bit ADPCM samples, without any specific header o
 ## Why CLEANYM?
 
 Traditional ADPCM encoders often make decisions based only on the current sample, leading to "greedy" choices that can propagate errors or introduce noticeable artifacts. CLEANYM's look-ahead mechanism allows the encoder to anticipate future signal changes and choose the ADPCM code that minimizes distortion over a short window, resulting in a cleaner reproduction of the original audio. This is particularly beneficial for applications where every bit of quality matters within tight constraints.
-CLEANYM look-ahead is entirely implemented in the encoder, with a stock YMZ decoder. This allows usage in applications with YMZ specific hardware.
+CLEANYM look-ahead is entirely implemented in the encoder, with a stock YMZ decoder, allwoing for usage in applications with YMZ specific hardware.
 
 ## Build Instructions
 
