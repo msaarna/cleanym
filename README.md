@@ -7,7 +7,7 @@ The output is a raw stream of 4-bit ADPCM samples, without any specific header o
 ## Features
 
 *   **4-bit YMZ ADPCM Encoding:** Efficient compression suitable for low-bandwidth audio.
-*   **Look-Ahead Optimization:** The encoder analyzes future samples to make more intelligent encoding decisions, drastically reducing perceived distortion and improving overall sound fidelity.
+*   **Look-Ahead Optimization:** The encoder analyzes future samples to make more intelligent encoding decisions, significantly reducing perceived distortion and improving overall sound fidelity.
 *   **Raw Sample Stream Output:** Generates a direct stream of ADPCM nibbles, packed into bytes, eliminating overhead for header parsing.
 *   **High-Quality Decoding:** A robust decoder to convert the 4-bit ADPCM stream back into PCM audio.
 *   **Resampling Support:** The encoder can resample input audio to a target rate, or preserve the original sample rate.
@@ -15,7 +15,8 @@ The output is a raw stream of 4-bit ADPCM samples, without any specific header o
 
 ## Why CLEANYM?
 
-Traditional ADPCM encoders often make decisions based only on the current sample, leading to "greedy" choices that can propagate errors or introduce noticeable artifacts. CLEANYM's look-ahead mechanism allows the encoder to anticipate future signal changes and choose the ADPCM code that minimizes distortion over a short window, resulting in a much cleaner and more faithful reproduction of the original audio. This is particularly beneficial for applications where every bit of quality matters within tight constraints.
+Traditional ADPCM encoders often make decisions based only on the current sample, leading to "greedy" choices that can propagate errors or introduce noticeable artifacts. CLEANYM's look-ahead mechanism allows the encoder to anticipate future signal changes and choose the ADPCM code that minimizes distortion over a short window, resulting in a cleaner reproduction of the original audio. This is particularly beneficial for applications where every bit of quality matters within tight constraints.
+CLEANYM look-ahead is entirely implemented in the encoder, with a stock YMZ decoder. This allows usage in applications with YMZ specific hardware.
 
 ## Build Instructions
 
