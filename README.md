@@ -89,8 +89,6 @@ For example, if the encoder outputs `0xAB` for a byte, this represents two ADPCM
 
 If the total number of samples is odd, the last byte will contain one valid ADPCM nibble in the lower half, and the upper half will be zero.
 
-Here is the `Reference Implementations` section tailored for the CLEANYM (4-bit) `README.md`. It follows the exact style and format of the 2-bit version but adapts the logic for 4-bit nibbles (2 samples per byte) and the table-based step adaptation used in your C code.
-
 ## Reference Implementations
 
 For the C reference implementation of the decoder logic, please refer to the `decodesample_ym4` function in `cleanym_decoder.c`.
